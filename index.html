@@ -86,8 +86,8 @@
 			const presentes = inputPresentes.value;
 			const faltantes = inputFaltantes.value;
 
-			const porcPresentesValue = ((presentes / (presentes + faltantes)) * 100).toFixed(1);
-			const porcFaltantesValue = ((faltantes / (presentes + faltantes)) * 100).toFixed(1);
+			const porcPresentesValue = ((presentes / (presentes + faltantes)) * 1000).toFixed(1);
+			const porcFaltantesValue = ((faltantes / (presentes + faltantes)) * 1000).toFixed(1);
 
 			porcPresentes.textContent = porcPresentesValue;
 			porcFaltantes.textContent = porcFaltantesValue;
