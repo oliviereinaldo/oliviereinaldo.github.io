@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de presença</title>
+</head>
+<body>
+
+	<h1>Calculadora de presença</h1>
+
+	<form>
+		<label for="presentes">Alunos presentes:</label>
+		<input type="number" id="presentes" name="presentes" min="0" required><br><br>
+		
+		<label for="faltantes">Alunos faltantes:</label>
+		<input type="number" id="faltantes" name="faltantes" min="0" required><br><br>
+
+		<input type="submit" value="Calcular">
+	</form>
+
+	<p>Porcentagem de alunos presentes: <span id="porc-presentes"></span>%</p>
+	<p>Porcentagem de alunos faltantes: <span id="porc-faltantes"></span>%</p>
+
+	<script>
+  
+		const inputPresentes = document.getElementById('presentes');
+		const inputFaltantes = document.getElementById('faltantes');
+
+
+		const porcPresentes = document.getElementById('porc-presentes');
+		const porcFaltantes = document.getElementById('porc-faltantes');
+
+		
+		document.querySelector('form').addEventListener('submit', (event) => {
+			event.preventDefault(); // Previne o envio do formulário
+
+			
+			const presentes = inputPresentes.value;
+			const faltantes = inputFaltantes.value;
+
+			
+			const porcPresentesValue = ((presentes / (presentes + faltantes)) * 10).toFixed(1);
+			const porcFaltantesValue = ((faltantes / (presentes + faltantes)) * 10).toFixed(1);
+
+			
+			porcPresentes.textContent = porcPresentesValue;
+			porcFaltantes.textContent = porcFaltantesValue;
+		});
+	</script>
+
+</body>
+</html>
