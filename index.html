@@ -81,17 +81,18 @@
 		const porcFaltantes = document.getElementById('porc-faltantes');
 
 		document.querySelector('form').addEventListener('submit', (event) => {
-			event.preventDefault();
+		    event.preventDefault();
 
-			const presentes = inputPresentes.value;
-			const faltantes = inputFaltantes.value;
+		    const presentes = inputPresentes.value;
+		    const faltantes = inputFaltantes.value;
 
-			const porcPresentesValue = ((presentes / (presentes + faltantes)) * 100).toFixed(1);
-			const porcFaltantesValue = ((faltantes / (presentes + faltantes)) * 100).toFixed(1);
+		    const porcPresentesValue = ((presentes / (presentes + faltantes)) * 100).toFixed(1);
+		    const porcFaltantesValue = (100 - porcPresentesValue).toFixed(1);
 
-			porcPresentes.textContent = porcPresentesValue;
-			porcFaltantes.textContent = porcFaltantesValue;
+		    porcPresentes.textContent = porcPresentesValue;
+		    porcFaltantes.textContent = porcFaltantesValue;
 		});
+
 	</script>
 
 </body>
